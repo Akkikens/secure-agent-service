@@ -1,0 +1,27 @@
+{
+  "Id": "orders-are-caller-scoped",
+  "Cassette": "orders-own-only.jsonl",
+  "UserId": "alice",
+  "Roles": [
+    "customer"
+  ],
+  "Scopes": [
+    "orders:read"
+  ],
+  "Prompt": "What have I ordered?",
+  "Approvals": {},
+  "Expect": {
+    "AnswerContains": [
+      "A-100"
+    ],
+    "AnswerNotContains": [
+      "B-200"
+    ],
+    "Citations": [],
+    "ToolsCalled": [
+      "get_my_orders"
+    ],
+    "Rubric": [],
+    "RubricThreshold": 0.8
+  }
+}

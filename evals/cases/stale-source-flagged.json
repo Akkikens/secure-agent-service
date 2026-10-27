@@ -1,0 +1,28 @@
+{
+  "Id": "stale-source-flagged",
+  "Cassette": "stale-source-flagged.jsonl",
+  "UserId": "alice",
+  "Roles": [
+    "customer"
+  ],
+  "Scopes": [
+    "kb:read"
+  ],
+  "Prompt": "How long does express shipping take?",
+  "Approvals": {},
+  "Expect": {
+    "AnswerContains": [
+      "1 to 2 business days",
+      "out of date"
+    ],
+    "AnswerNotContains": [],
+    "Citations": [
+      "shipping-faq"
+    ],
+    "ToolsCalled": [
+      "search_knowledge"
+    ],
+    "Rubric": [],
+    "RubricThreshold": 0.8
+  }
+}

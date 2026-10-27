@@ -1,0 +1,32 @@
+{
+  "Id": "returns-window",
+  "Cassette": "returns-window.jsonl",
+  "UserId": "alice",
+  "Roles": [
+    "customer"
+  ],
+  "Scopes": [
+    "kb:read"
+  ],
+  "Prompt": "How long do I have to return an item?",
+  "Approvals": {},
+  "Expect": {
+    "AnswerContains": [
+      "30 days"
+    ],
+    "AnswerNotContains": [],
+    "Citations": [
+      "returns-policy"
+    ],
+    "ToolsCalled": [
+      "search_knowledge"
+    ],
+    "Denied": 0,
+    "Rubric": [
+      "States the 30-day return window",
+      "Cites the returns-policy source",
+      "Does not invent details not in the source"
+    ],
+    "RubricThreshold": 0.8
+  }
+}

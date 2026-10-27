@@ -1,0 +1,2 @@
+{"Key":"00e79daecb19ac60","Text":"","Calls":[{"Id":"c1","Name":"issue_refund","Args":{"orderId":"A-100"}}]}
+{"Key":"266c4ddc4a39a55f","Text":"Done: order A-100 has been refunded to your original payment method.","Calls":[]}

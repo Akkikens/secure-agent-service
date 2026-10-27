@@ -1,0 +1,9 @@
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+audit.jsonl
+cassette.jsonl
+local.settings.json
+.DS_Store

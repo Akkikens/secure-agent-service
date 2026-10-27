@@ -1,0 +1,15 @@
+name: ci
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+      - run: dotnet build -c Release --nologo
+      - run: dotnet test -c Release --no-build --nologo
+      - name: Replay eval gate (offline, no model key)
+        run: dotnet run -c Release --no-build --project src/Agent.Cli -- eval --cases=evals/cases --baseline=evals/baseline.json

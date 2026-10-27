@@ -1,0 +1,4 @@
+[
+  { "text": "I'll issue that refund for you.", "calls": [ { "id": "c1", "name": "issue_refund", "args": { "orderId": "A-100" } } ] },
+  { "text": "Done: order A-100 has been refunded to your original payment method." }
+]

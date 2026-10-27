@@ -1,0 +1,26 @@
+{
+  "Id": "refund-rejected-by-user",
+  "Cassette": "refund-rejected.jsonl",
+  "UserId": "alice",
+  "Roles": [
+    "customer"
+  ],
+  "Scopes": [
+    "orders:refund"
+  ],
+  "Prompt": "Please refund order A-100",
+  "Approvals": {
+    "issue_refund": false
+  },
+  "Expect": {
+    "AnswerContains": [
+      "not issued"
+    ],
+    "AnswerNotContains": [],
+    "Citations": [],
+    "ToolsCalled": [],
+    "PendingApprovals": 1,
+    "Rubric": [],
+    "RubricThreshold": 0.8
+  }
+}

@@ -1,0 +1,9 @@
+[
+  "internal-doc-hidden-from-customer",
+  "orders-are-caller-scoped",
+  "refund-approved",
+  "refund-rejected-by-user",
+  "refund-without-scope-denied",
+  "returns-window",
+  "stale-source-flagged"
+]
