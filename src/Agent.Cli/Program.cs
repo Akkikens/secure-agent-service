@@ -35,7 +35,7 @@ switch (cmd)
         using var tracer = Opt("trace", "false") == "true" ? Sdk.CreateTracerProviderBuilder().AddSource(Telemetry.SourceName).AddConsoleExporter().Build() : null;
 
         IChatClient chat = opts.ContainsKey("script")
-            ? new ScriptedChatClient(JsonSerializer.Deserialize<List<ScriptTurn>>(File.ReadAllText(opts["script"]))!.Select(t => t.ToResponse()))
+            ? new ScriptedChatClient(JsonSerializer.Deserialize<List<ScriptTurn>>(File.ReadAllText(opts["script"]), EvalRunner.Json)!.Select(t => t.ToResponse()))
             : new Anthropic.AnthropicClient { ApiKey = Environment.GetEnvironmentVariable("ANTHROPIC_API_KEY") ?? throw new Exception("set ANTHROPIC_API_KEY or pass --script") }
                 .AsIChatClient(Opt("model", "claude-sonnet-5-5"));
         if (cmd == "record") chat = new RecordingChatClient(chat, Opt("cassette", "cassette.jsonl"));
